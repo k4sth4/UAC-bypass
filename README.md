@@ -17,7 +17,7 @@ reg query HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System
 ```
 ![OnPaste 20220608-170237](https://user-images.githubusercontent.com/106917304/172606326-7b52b703-d024-4c97-ad19-29105d509a2f.png)
 
-EnableLUA tells us whether UAC is enabled. If 0 we don’t need to bypass it at all can just PsExec to SYSTEM. If it’s 1 however, then check the other 2 keys 
+EnableLUA tells us whether UAC is enabled. If 0 we don’t need to bypass it and we can just PsExec to SYSTEM. If it’s 1 however, then check the other 2 keys 
 PromptSecureDesktop is on.
 
 
