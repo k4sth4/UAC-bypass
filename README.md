@@ -13,7 +13,7 @@ whoami /all
 We're in administrator group and on Medium Mandatory Level.
 ## Check For UAC is Enabled
 ```markdown
-reg query HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System 
+reg query HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System /s
 ```
 ![OnPaste 20220608-170237](https://user-images.githubusercontent.com/106917304/172606326-7b52b703-d024-4c97-ad19-29105d509a2f.png)
 
